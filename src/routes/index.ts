@@ -10,5 +10,14 @@ router.get('/',(req: Request, res: Response) =>{
 
 
 router.get('/usuarios',usuarioController.index)
+router.get('/cadastro',usuarioController.visualizarCadastrar)
+router.post('/cadastro', usuarioController.cadastroUsuario)
+
+router.get('/editar/:id',usuarioController.editaUsuario)
+router.post('/editar/:id', usuarioController.atualizaUsuario)
+router.get('/excluir/:id', usuarioController.deletaUsuario)
+
+
 
 export default router 
+

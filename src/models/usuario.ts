@@ -1,8 +1,5 @@
-import { timeStamp } from 'console'
-import { Model, DataType, DataTypes } from 'sequelize'
+import {Model, DataTypes} from 'sequelize'
 import { sequelize } from '../instances/mysql'
-
-
 
 export interface UsuarioInstance extends Model{
     id: number
@@ -10,19 +7,18 @@ export interface UsuarioInstance extends Model{
     email: string
 }
 
-
 export const Usuario = sequelize.define<UsuarioInstance>("Usuario,",{
-    id: {
+    id:{
         primaryKey:true,
-        type: DataTypes.INTEGER
+        type:DataTypes.INTEGER
     },
     nome:{
-        type: DataTypes.STRING 
+        type:DataTypes.STRING
     },
-    email: {
+    email:{
         type: DataTypes.STRING
     }
 },{
     tableName:'usuarios',
-    timestamps:false 
+    timestamps:false
 })

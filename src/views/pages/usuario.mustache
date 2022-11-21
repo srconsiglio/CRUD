@@ -1,7 +1,7 @@
 {{>partials/header}}
 
 
-<a href="">Adicionar Usuário</a>
+<a href="/cadastro">Adicionar Usuário</a>
 <table border="1" width="100%">
 
     <tr>
@@ -10,6 +10,19 @@
         <th>EMAIL</th>
         <th>AÇÕES</th>
     </tr>
-</table>
 
-{{>partials/footer}}
+    {{#users}}
+
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nome}}</td>
+            <td>{{email}}</td>
+        
+        <td>
+            <a href="/editar/{{id}}">[editar]</a>
+            <a href="/excluir/{{id}}" onclick="return confirm('Tem certeza que deseja excluir?')">[excluir]</a>
+        </td>
+        </tr>
+    {{/users}}
+
+</table>
